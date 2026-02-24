@@ -22,7 +22,7 @@ Work experience
 * 1994 – 1997:	Graduate Research Assistant, College of Oceanic and Atmospheric Sciences, Oregon State University, Corvallis, OR  
 * 1993 – 1993:	Visiting Researcher, IFREMER, DRO/GM, Plouzané, France  
 * 1991 – 1994: 	Office of Naval Research Graduate Fellow
-* 1989 – 1991	Oceanography Associate, Brookhaven National Laboratory, Upton, NY  
+* 1989 – 1991:	Oceanography Associate, Brookhaven National Laboratory, Upton, NY  
  
 <img width="471" height="122" alt="image" src="https://github.com/user-attachments/assets/24c3a39a-14e9-42c0-a4d8-a38f1923b0fb" />
 
