@@ -6,28 +6,122 @@ author_profile: true
 ---
 
 <style>
-  /* This ensures the list layout stays consistent and counts down correctly */
+  .filter-btn {
+    background-color: #f1f1f1;
+    border: none;
+    color: #333;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: 0.3s;
+  }
+  .filter-btn:hover { background-color: #ddd; }
+  .active { background-color: #2c3e50; color: white; }
+  
   ol.reversed-list {
     display: flex;
     flex-direction: column;
   }
 </style>
 
+<div id="categoryButtons" style="margin-bottom: 15px;">
+  <button class="filter-btn active" onclick="filterCategory('all', this)">Show All</button>
+  <button class="filter-btn" onclick="filterCategory('satellite', this)">Satellite Oceanography</button>
+  <button class="filter-btn" onclick="filterCategory('fisheries', this)">Fisheries</button>
+  <button class="filter-btn" onclick="filterCategory('southern-ocean', this)">Southern Ocean</button>
+  <button class="filter-btn" onclick="filterCategory('chlorophyll', this)">Chlorophyll/Blooms</button>
+  <button class="filter-btn" onclick="filterCategory('hydrothermal', this)">Hydrothermal</button>
+  <button class="filter-btn" onclick="filterCategory('other', this)">Other</button>
+</div>
+
+<input type="text" id="pubSearch" onkeyup="filterPubs()" placeholder="Search by keyword, year, or co-author..." style="width: 100%; padding: 12px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 4px;">
+
+<script>
+let currentCategory = 'all';
+
+function filterCategory(category, btn) {
+  currentCategory = category;
+  let buttons = document.getElementsByClassName("filter-btn");
+  for (let b of buttons) { b.classList.remove("active"); }
+  btn.classList.add("active");
+  filterPubs();
+}
+
+function filterPubs() {
+  let input = document.getElementById('pubSearch');
+  let filter = input.value.toUpperCase();
+  let ol = document.getElementsByClassName("reversed-list")[0];
+  let li = ol.getElementsByTagName('li');
+
+  for (let i = 0; i < li.length; i++) {
+    let txtValue = li[i].textContent || li[i].innerText;
+    let categories = li[i].getAttribute('data-category') || "";
+    let matchesSearch = txtValue.toUpperCase().indexOf(filter) > -1;
+    let matchesCategory = (currentCategory === 'all' || categories.includes(currentCategory));
+
+    li[i].style.display = (matchesSearch && matchesCategory) ? "" : "none";
+  }
+}
+</script>
+
 <ol reversed class="reversed-list">
-  <li>**Wilson, C.**, J. Hinke and M. Mazloff (2025), Long-distance winter migrations of chinstrap penguins and elephant seals to a persistent bloom at the edge of the Ross Gyre, Scientific Reports, [https://doi.org/10.1038/s41598-025-87433-6](https://doi.org/10.1038/s41598-025-87433-6).</li>
-  <li>**Wilson, C.**, and D. H. Robinson (2022) Satellite Monitoring of Sea Surface Temperature and Chlorophyll for Sustainable Fishing ERDDAP, Proceeding of the 2022 IEEE International Geoscience and Remote Sensing Symposium</li>
-  <li>**Wilson, C.** (2021), Evidence of Episodic Nitrate Injections in the Oligotrophic North Pacific Associated with Surface Chlorophyll Blooms, Journal of Geophysical Research: Oceans. 126, e2021JC017169. [https://doi.org/10.1029/2021JC017169](https://doi.org/10.1029/2021JC017169).</li>
-  <li>Welch, H., S. Brodie, M.G. Jacox, D.H. Robinson, **C. Wilson**, S. J. Bograd, M.J. Oliver, E.L. Hazen (2020) Considerations for transferring an operational dynamic ocean management tool between ocean color products. Remote Sensing of the Environment. 242, 111753.</li>
-  <li>**Wilson, C.**, D. H. Robinson and R.A. Simons (2020) ERDDAP: Providing easy access to remote sensing data for scientists and students, Proceeding of the 2020 IEEE International Geoscience and Remote Sensing Symposium</li>
-  <li>**Wilson, C.**, D.H. Robinson and S.K. Shotwell (2020) Overcoming Barriers to the use of Satellite data in Fisheries Management, Proceeding of the 2020 IEEE International Geoscience and Remote Sensing Symposium.</li>
-  <li>**Wilson, C.**, Robinson, D.H. (2019) Lessons Learned from the NOAA CoastWatch Ocean Satellite Course Developed for Integrating Oceanographic Satellite data into Operational Use. Int. J. Geo-Inf. 2019, 8(8), 354; [https://doi.org/10.3390/ijgi8080354](https://doi.org/10.3390/ijgi8080354)</li>
-  <li>Anderson E.E., **C. Wilson**, A. H. Knap and T. A. Villareal (2018), Summer diatom blooms in the eastern North Pacific gyre investigated with a long-endurance autonomous surface vehicle. PeerJ 6:e5387; [https://doi.org/10.7717/peerj.5387](https://doi.org/10.7717/peerj.5387)</li>
-  <li>Eguchi, Tomoharu, Sam McClatchie, **Cara Wilson**, et al. (2018), Loggerhead turtles (Caretta caretta) in the California Current: abundance, distribution, and anomalous warming of the North Pacific, Frontiers in Marine Science 5:452, [https://doi.org/10.3389/fmars.2018.00452](https://doi.org/10.3389/fmars.2018.00452)</li>
-  <li>Lotliker, A.A., S.K. Baliarsingh, V. L. Trainer, M. L. Wells, **C. Wilson**, et al. (2018), Noctiluca blooms are not associated with hypoxia in the Northeastern Arabian Sea oceanic waters, Harmful Algae, 74, 46-57</li>
-  <li>Lee, Z., R. Arnone, D. Boyce, et al. (including **C. Wilson**) (2018), Global water clarity: continuing a century-long monitoring, Eos, 99, [https://doi.org/10.1029/2018EO097251](https://doi.org/10.1029/2018EO097251)</li>
-  <li>Qi, L., C. Hu, M. Wang, S. Shang and **C. Wilson** (2017), Floating algae blooms in the East China Sea, Geophys. Res. Lett., [https://doi.org/10.1002/2017GL075525](https://doi.org/10.1002/2017GL075525)</li>
-  <li>**Wilson, C.**, A. V. Sastre, M. Hoffmeyer, et al. (2016) Southern right whale (Eubalaena australis) calf mortality at Península Valdés, Argentina: are harmful algal blooms to blame?, Marine Mammal Science, 32(2),423-451, [https://doi.org/10.1111/mms.12263](https://doi.org/10.1111/mms.12263).</li>
-  <li>Rose, R.A., et al. (including **C. Wilson**) (2014). Ten Ways Remote Sensing Can Contribute to Conservation, Conservation Biology, [https://doi.org/10.1111/cobi.12397](https://doi.org/10.1111/cobi.12397)</li>
-  <li>Villareal, T.A. & **C. Wilson** (2014) A comparison of the Pac-X trans-Pacific Wave Glider data and satellite data (MODIS, Aquarius, TRMM and VIIRS), PlosOne, 9(3): e92280. [https://doi.org/10.1371/journal.pone.0092280](https://doi.org/10.1371/journal.pone.0092280).</li>
-  <li>Fernadez, D. & **C. Wilson** (2013), User Engagement and Requirements, Chapter 3 in U.S. Integrated Ocean Observing System (IOOS) 2012 Summit Report.</li>
-  <li>**Wilson, C.**, T.A. Villareal, M. Brzezinski, J. W. Krause & A. Shcherbina (2013). Chlorophyll bloom development and the Subtropical Front in the North Pacific, J. Geophys. Res., 118, 1473-1488,
+  <li data-category="satellite chlorophyll southern-ocean">**Wilson, C.**, J. Hinke and M. Mazloff (2025), Long-distance winter migrations of chinstrap penguins and elephant seals to a persistent bloom at the edge of the Ross Gyre, Scientific Reports, [https://doi.org/10.1038/s41598-025-87433-6](https://doi.org/10.1038/s41598-025-87433-6).</li>
+  <li data-category="satellite fisheries chlorophyll">**Wilson, C.**, and D. H. Robinson (2022) Satellite Monitoring of Sea Surface Temperature and Chlorophyll for Sustainable Fishing ERDDAP, Proceeding of the 2022 IEEE International Geoscience and Remote Sensing Symposium</li>
+  <li data-category="chlorophyll">**Wilson, C.** (2021), Evidence of Episodic Nitrate Injections in the Oligotrophic North Pacific Associated with Surface Chlorophyll Blooms, Journal of Geophysical Research: Oceans. 126, e2021JC017169. [https://doi.org/10.1029/2021JC017169](https://doi.org/10.1029/2021JC017169).</li>
+  <li data-category="fisheries satellite">Welch, H., S. Brodie, M.G. Jacox, D.H. Robinson, **C. Wilson**, et al. (2020) Considerations for transferring an operational dynamic ocean management tool between ocean color products. Remote Sensing of the Environment. 242, 111753.</li>
+  <li data-category="satellite">**Wilson, C.**, D. H. Robinson and R.A. Simons (2020) ERDDAP: Providing easy access to remote sensing data for scientists and students, Proceeding of the 2020 IEEE International Geoscience and Remote Sensing Symposium</li>
+  <li data-category="fisheries satellite">**Wilson, C.**, D.H. Robinson and S.K. Shotwell (2020) Overcoming Barriers to the use of Satellite data in Fisheries Management, Proceeding of the 2020 IEEE International Geoscience and Remote Sensing Symposium.</li>
+  <li data-category="satellite">**Wilson, C.**, Robinson, D.H. (2019) Lessons Learned from the NOAA CoastWatch Ocean Satellite Course Developed for Integrating Oceanographic Satellite data into Operational Use. [https://doi.org/10.3390/ijgi8080354](https://doi.org/10.3390/ijgi8080354)</li>
+  <li data-category="chlorophyll">Anderson E.E., **C. Wilson**, A. H. Knap and T. A. Villareal (2018), Summer diatom blooms in the eastern North Pacific gyre investigated with a long-endurance autonomous surface vehicle. [https://doi.org/10.7717/peerj.5387](https://doi.org/10.7717/peerj.5387)</li>
+  <li data-category="satellite">Eguchi, T., et al. (including **Cara Wilson**) (2018), Loggerhead turtles (Caretta caretta) in the California Current: abundance, distribution, and anomalous warming. [https://doi.org/10.3389/fmars.2018.00452](https://doi.org/10.3389/fmars.2018.00452)</li>
+  <li data-category="chlorophyll">Lotliker, A.A., et al. (including **C. Wilson**) (2018), Noctiluca blooms are not associated with hypoxia in the Northeastern Arabian Sea. Harmful Algae, 74, 46-57.</li>
+  <li data-category="satellite">Lee, Z., et al. (including **C. Wilson**) (2018), Global water clarity: continuing a century-long monitoring, Eos, 99, [https://doi.org/10.1029/2018EO097251](https://doi.org/10.1029/2018EO097251)</li>
+  <li data-category="chlorophyll satellite">Qi, L., C. Hu, M. Wang, S. Shang and **C. Wilson** (2017), Floating algae blooms in the East China Sea, Geophys. Res. Lett., [https://doi.org/10.1002/2017GL075525](https://doi.org/10.1002/2017GL075525)</li>
+  <li data-category="chlorophyll">**Wilson, C.**, et al. (2016) Southern right whale calf mortality at Península Valdés, Argentina: are harmful algal blooms to blame?, [https://doi.org/10.1111/mms.12263](https://doi.org/10.1111/mms.12263).</li>
+  <li data-category="satellite">Rose, R.A., et al. (including **C. Wilson**) (2014). Ten Ways Remote Sensing Can Contribute to Conservation. [https://doi.org/10.1111/cobi.12397](https://doi.org/10.1111/cobi.12397)</li>
+  <li data-category="satellite">Villareal, T.A. & **C. Wilson** (2014) A comparison of the Pac-X trans-Pacific Wave Glider data and satellite data. [https://doi.org/10.1371/journal.pone.0092280](https://doi.org/10.1371/journal.pone.0092280).</li>
+  <li data-category="fisheries">Fernadez, D. & **C. Wilson** (2013), User Engagement and Requirements, IOOS 2012 Summit Report.</li>
+  <li data-category="chlorophyll">**Wilson, C.**, et al. (2013). Chlorophyll bloom development and the Subtropical Front in the North Pacific, [https://doi.org/10.1002/jgrc.20143](https://doi.org/10.1002/jgrc.20143)</li>
+  <li data-category="chlorophyll">Krause, J.W., et al. (including **C. Wilson**) (2013), Biogenic silica cycling during summer phytoplankton blooms in the North Pacific subtropical gyre. Deep-Sea Research I, 71, 49-60.</li>
+  <li data-category="chlorophyll">Krause, J.W., et al. (including **C. Wilson**) (2012) Increased kinetic efficiency for silicic acid uptake, Limnology & Oceanography, 57,1084-1098.</li>
+  <li data-category="chlorophyll">Villareal, T.A., et al. (including **C. Wilson**) (2012) Summer diatom blooms in the North Pacific Subtropical Gyre: 2008-2009. [https://doi.org/10.1371/journal.pone.0033109](https://doi.org/10.1371/journal.pone.0033109)</li>
+  <li data-category="chlorophyll">**Wilson, C.** (2011), Chlorophyll anomalies along the critical latitude at 30°N in the NE Pacific, [https://doi.org/10.1029/2011GL048210](https://doi.org/10.1029/2011GL048210)</li>
+  <li data-category="chlorophyll">Villareal, T., L. Adornato, **C. Wilson**, & C. Schoenbaechler (2011), Summer blooms of diatom-diazotroph assemblages (DDAs), [https://doi.org/10.1029/2010JC006268](https://doi.org/10.1029/2010JC006268)</li>
+  <li data-category="fisheries satellite">**Wilson, C.** (2011) The rocky road from research to operations for satellite ocean-colour data in fishery management. [https://doi.org/10.1093/icesjms/fsq168](https://doi.org/10.1093/icesjms/fsq168).</li>
+  <li data-category="chlorophyll">Yoder, J.A., S.C. Doney, D.A. Siegel, & **C. Wilson.** (2010) Study of Marine Ecosystems and Biogeochemistry Now and in the Future. Oceanography, 23(4), 128-141.</li>
+  <li data-category="fisheries satellite">**Wilson, C.** (2010) Fisheries, invited chapter contribution in the Encyclopedia of Remote Sensing.</li>
+  <li data-category="fisheries satellite">**Wilson, C.**, et al. (2009). Remote Sensing Applications to Fisheries Management in Remote Sensing in Fisheries and Aquaculture. IOCCG report #8.</li>
+  <li data-category="fisheries satellite">Bundy, A., et al. (including **C. Wilson**) (2009) Building Links with the Fishing Communities, IOCCG report #8.</li>
+  <li data-category="fisheries satellite">**Wilson, C.**, et al. (2008). Ocean Colour Radiometry and Fisheries, IOCCG report #7.</li>
+  <li data-category="satellite">Hoepffner, N., **C. Wilson**, & S. Lavender (2008). Ocean Colour and Climate Change, IOCCG report #7.</li>
+  <li data-category="chlorophyll">Hoepffner, N., et al. (including **C. Wilson**) (2008). Biogeochemical Cycles, IOCCG report #7.</li>
+  <li data-category="chlorophyll">**Wilson, C.** & X. Qiu (2008). Global distribution of summer chlorophyll blooms in the oligotrophic gyres. Prog. Ocean., 78, 107-134.</li>
+  <li data-category="chlorophyll">**Wilson, C.**, et al. (2008). Biological and physical forcings of late summer chlorophyll blooms at 30°N in the oligotrophic Pacific, [https://doi.org/10.1016/j.jmarsys.2005.09.018](https://doi.org/10.1016/j.jmarsys.2005.09.018).</li>
+  <li data-category="fisheries satellite">Friedl, L., **C. Wilson**, et al. (2006), Using Satellite Data Products to Manage Living Marine Resources, EOS, 87(41), 437.</li>
+  <li data-category="satellite chlorophyll">**Wilson, C.** and V.J. Coles (2005). Global climatological relationships between satellite biological and physical observations, [https://doi.org/10.1029/2004JC002724](https://doi.org/10.1029/2004JC002724).</li>
+  <li data-category="fisheries ">Hinke, J.T., D.G. Foley, **C. Wilson** & G.M. Watters (2005), Persistent habitat use by Chinook salmon, Mar. Ecol. Prog. Ser., 304, 207-220.</li>
+  <li data-category="chlorophyll satellite">Bograd, S.J., et al. (including **C. Wilson**) (2004). On the seasonal and interannual migrations of the Transition Zone Chlorophyll Front. [https://doi.org/10.1029/2004GL020637](https://doi.org/10.1029/2004GL020637)</li>
+  <li data-category="satellite">Coles, V.J., **C. Wilson** & R.R. Hood (2004). Remote sensing of new production fueled by nitrogen fixation. [https://doi.org/10.1029/2003019018](https://doi.org/10.1029/2003019018)</li>
+  <li data-category="chlorophyll">**Wilson, C.** (2003). Late summer chlorophyll blooms in the oligotrophic North Pacific subtropical gyre. [https://doi.org/10.1029/2003GL017770](https://doi.org/10.1029/2003GL017770)</li>
+  <li data-category="satellite">**Wilson, C.** & D. Adamec (2002). A global view of bio-physical coupling from SeaWiFS and TOPEX, [https://doi.org/10.1029/2001GL014063](https://doi.org/10.1029/2001GL014063).</li>
+  <li data-category="chlorophyll satellite">**Wilson, C.** & D. Adamec (2001). Correlations between surface chlorophyll and sea surface height in the tropical Pacific. J. Geophys. Res., 106, 31,175-31,188.</li>
+  <li data-category="hydrothermal southern-ocean">Klinkhammer, G.P., et al. (including **C. Wilson**) (2001). Discovery of new hydrothermal vent sites in Bransfield Strait, Antarctica. Earth Plant. Sci. Lett.</li>
+  <li data-category="southern-ocean">**Wilson, C.**, G.P. Klinkhammer, & C.S. Chin (1999). Hydrography of the Central and East Basins of the Bransfield Strait, Antarctica. J. Phys. Ocean., 29: 465-479.</li>
+  <li data-category="other">Ashjian, C. J., et al. (including **C. Wilson**) (1998). Patterns and occurrence of diel vertical migration of zooplankton biomass. Cont. Shelf Res., 18, 831-858.</li>
+  <li data-category="hydrothermal">Biscoito, M., et al. (including **C. Wilson**), eds (1998). Proceedings of the first international symposium on deep-sea hydrothermal biology.</li>
+  <li data-category="hydrothermal">Chin, C. S., G. P. Klinkhammer & **C. Wilson** (1998). Detection of hydrothermal plumes on the northern MAR. Earth Planet. Sci. Lett., 162: 1-13.</li>
+  <li data-category="hydrothermal">Langmuir, C. L., et al. (including **C. Wilson**) (1997). Hydrothermal vents near a mantle hot spot: Lucky Strike vent field at 37°N.</li>
+  <li data-category="other">Klinkhammer, G.P., et al. (including **C. Wilson**) (1997). Distributions of dissolved manganese and fluorescent DOM in the Columbia River estuary.</li>
+  <li data-category="other">Klinkhammer G. P., **C. Wilson**, et al. (1996). Dissolved humic organic matter in the Columbia River estuary.</li>
+  <li data-category="hydrothermal">**Wilson, C.**, et al. (1996). Hydrothermal anomalies at Lucky Strike (37°17'N), on the Mid-Atlantic Ridge. Earth Planet. Sci. Lett.</li>
+  <li data-category="hydrothermal">Klinkhammer, G. P., et al. (including **C. Wilson**) (1995). Venting from the Mid-Atlantic Ridge at 37°17'N. Geological Society.</li>
+  <li data-category="hydrothermal">**Wilson, C.**, et al. (1995). Hydrography above the Mid-Atlantic Ridge (33°-40°N) and within the Lucky Strike segment.</li>
+  <li data-category="other">Falkowski, P. G., et al. (including **C. Wilson**) (1992). Natural versus anthropogenic factors affecting low-level cloud albedo. Science.</li>
+  <li data-category="chlorophyll">Falkowski, P. G. and **C. Wilson** (1992). Phytoplankton productivity in the North Pacific Ocean since 1900. Nature.</li>
+  <li data-category="chlorophyll southern-ocean">**Wilson, C.** and D. W. R. Wallace (1990). Using the nutrient ratio NO/PO as a tracer of continental shelf waters in the central Arctic Ocean.</li>
+</ol>
