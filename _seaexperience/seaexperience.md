@@ -1,7 +1,10 @@
 ---
+layout: single 
 title: 'Sea Experience'
 permalink: /seaexperience/
+author_profile: true
 ---
+
 14 cruises, 276 days at sea 
 
 FSV Bell Shimada, Sep 18-29, 2025. Integrayed West Coast Pelagic Survey (IWCPS), leg 6. 
