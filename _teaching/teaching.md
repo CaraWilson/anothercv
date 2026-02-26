@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: single
 title: "Teaching Experiences"
 permalink: /teaching/
 excerpt: ""
@@ -7,6 +7,10 @@ header:
   overlay_filter: 0.5 # This can sometimes reset "ghost" headers
 author_profile: true
 ---
+
+<style>
+  .page__meta { display: none !important; }
+</style>
 
 **CoastWatch Satellite Course**
 
