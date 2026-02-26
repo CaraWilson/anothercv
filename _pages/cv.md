@@ -9,7 +9,7 @@ author_profile: true
 
 ## Education
 
-**1997 — Ph.D. in Oceanography** *Oregon State University, Corvallis, OR* <small>Dissertation: Hydrography and heat flux in hydrothermal regions</small>
+**1997 — Ph.D. in Oceanography** *Oregon State University, Corvallis, OR* <br><small>Dissertation: Hydrography and heat flux in hydrothermal regions</small>
 
 **1989 — B.Sc. in Oceanography** *University of Michigan, Ann Arbor, MI*
 
@@ -24,12 +24,6 @@ author_profile: true
 | **1993 – 1993** | **Visiting Researcher** | IFREMER, DRO/GM<br>*Plouzané, France* |
 | **1991 – 1994** | **Graduate Fellow** | Office of Naval Research |
 | **1989 – 1991** | **Oceanography Associate** | Brookhaven National Lab<br>*Upton, NY* |
-
-<div style="text-align: center; margin: 25px 0;">
-  <img width="471" height="122" alt="Research/Institution Logo" 
-       src="https://github.com/user-attachments/assets/24c3a39a-14e9-42c0-a4d8-a38f1923b0fb"
-       style="border-radius: 4px; opacity: 0.9;">
-</div>
 
 ## Service work
 * Volunteer trip leader with the Sierra Club
