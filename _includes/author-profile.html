@@ -28,13 +28,13 @@
         <li class="author__desktop"><i class="fas fa-fw fa-location-dot icon-pad-right" aria-hidden="true"></i>{{ author.location }}</li>
       {% endif %}
       {% if author.employer %}
-        <li>
-          <span class="label" style="display: inline-block; width: 24px; text-align: center;">
+        <li style="display: flex; align-items: center; margin-bottom: 5px;">
+          <div style="width: 28px; display: flex; justify-content: center; flex-shrink: 0; margin-right: 4px;">
             <img src="{{ '/images/NOAA-Logo.png' | relative_url }}" 
-                 style="width: 18px; height: auto; vertical-align: middle; margin-top: -3px;" 
+                 style="width: 18px; height: 18px; object-fit: contain;" 
                  alt="NOAA Logo">
-          </span>
-          {{ author.employer }}
+          </div>
+          <span>{{ author.employer }}</span>
         </li>
       {% endif %}
       {% if author.uri %}
