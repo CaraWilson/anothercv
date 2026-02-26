@@ -24,9 +24,6 @@
     <button class="btn btn--inverse">Follow</button>
     <ul class="author__urls social-icons">
       <!-- Font Awesome icons / Biographic information  -->
-      {% if author.location %}
-        <li class="author__desktop"><i class="fas fa-fw fa-location-dot icon-pad-right" aria-hidden="true"></i>{{ author.location }}</li>
-      {% endif %}
       {% if author.employer %}
         <li style="display: flex; align-items: center; margin-bottom: 5px;">
           <div style="width: 28px; display: flex; justify-content: center; flex-shrink: 0; margin-right: 4px;">
@@ -36,6 +33,9 @@
           </div>
           <span>{{ author.employer }}</span>
         </li>
+      {% endif %}
+      {% if author.location %}
+        <li class="author__desktop"><i class="fas fa-fw fa-location-dot icon-pad-right" aria-hidden="true"></i>{{ author.location }}</li>
       {% endif %}
       {% if author.uri %}
         <li><a href="{{ author.uri }}"><i class="fas fa-fw fa-link icon-pad-right" aria-hidden="true"></i>{{ site.data.ui-text[site.locale].website_label | default: "Website" }}</a></li>
