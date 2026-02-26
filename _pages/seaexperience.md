@@ -1,23 +1,46 @@
 ---
-layout: single 
+layout: archive
 title: 'Sea Experience'
 permalink: /seaexperience/
 author_profile: true
 ---
 
-14 cruises, 276 days at sea 
+**Career Summary:** 14 cruises | 276 days at sea 
 
-FSV Bell Shimada, Sep 18-29, 2025. Integrayed West Coast Pelagic Survey (IWCPS), leg 6. 
-FSV Bell Shimada, July 1 - 15, 2025. Integrayed West Coast Pelagic Survey (IWCPS), leg 2. 
-RV Kilo Moana, July 29 - Aug 14, 2009. Cruise examining silicon cycling in the North Pacific Subtropical Gyre.
-RV Kilo Moana, July 1-22, 2008. Cruise examining silicon cycling in the North Pacific Subtropical Gyre.
-RVIB N.B. Palmer, April 15 - May 10, 1999. Water sampling cruise to locate hydrothermal sites in the Bransfield Strait, Antarctica.
-RV Senckenberg, July 24- 27, 1998. ZAPS deployment in the Wadden Sea, Germany.
-RV Wecoma, Dec. 3-8, 1996. ZAPS deployment in the Columbia River estuary.
-RV Knorr, LUSTRE Cruise, June 26 - Aug 8, 1996. AMS-120, ARGO and JASON used to characterize the tectonic and hydrothermal features of the Lucky Strike site on the Mid-Atlantic Ridge.
-RV Wecoma, GREAT Cruise, Apr. 6-16, 1996. Response cruise to study eruption on the Gorda Ridge.
-RVIB N.B. Palmer, Oct. 28 - Dec. 7, 1995. Seabeam and water sampling cruise to detect hydrothermal activity in the Bransfield Strait, Antarctica.
-RV Wecoma, May 28-31, 1995. ZAPS deployment in the Columbia River estuary.
-RV Atlantis II, Lucky Strike Cruise, May 27-June 3, 1993. Submersible survey with ALVIN located vent sites on the Lucky Strike seamount in the Mid-Atlantic Ridge.
-RV Atlantis II, FAZAR Cruise, Aug. 29-Oct. 20, 1992. Rock-coring and water sampling cruise along the northern Mid-Atlantic Ridge to examine the relationship between basalt petrology and hydrothermal activity.
-RV Endeavor, SEEP-II-08 Cruise, Nov. 8-21, 1988. Mooring deployments and CTD casts along the continental shelf off of Cape Hatteras.
+---
+
+## 2020s
+* **2025** | **FSV Bell Shimada** (Sep 18 – 29)  
+  *Integrated West Coast Pelagic Survey (IWCPS), Leg 6*
+* **2025** | **FSV Bell Shimada** (July 1 – 15)  
+  *Integrated West Coast Pelagic Survey (IWCPS), Leg 2*
+
+## 2000s
+* **2009** | **RV Kilo Moana** (July 29 – Aug 14)  
+  *North Pacific Subtropical Gyre: Silicon cycling research*
+* **2008** | **RV Kilo Moana** (July 1 – 22)  
+  *North Pacific Subtropical Gyre: Silicon cycling research*
+
+## 1990s
+* **1999** | **RVIB N.B. Palmer** (Apr 15 – May 10)  
+  *Bransfield Strait, Antarctica: Hydrothermal site localization*
+* **1998** | **RV Senckenberg** (July 24 – 27)  
+  *Wadden Sea, Germany: ZAPS deployment*
+* **1996** | **RV Wecoma** (Dec 3 – 8)  
+  *Columbia River Estuary: ZAPS deployment*
+* **1996** | **RV Knorr** (June 26 – Aug 8)  
+  *LUSTRE Cruise, Lucky Strike Site, Mid-Atlantic Ridge* *Technical: AMS-120, ARGO, and JASON operations*
+* **1996** | **RV Wecoma** (Apr 6 – 16)  
+  *GREAT Cruise: Gorda Ridge eruption response study*
+* **1995** | **RVIB N.B. Palmer** (Oct 28 – Dec 7)  
+  *Antarctica: Seabeam and water sampling for hydrothermal activity*
+* **1995** | **RV Wecoma** (May 28 – 31)  
+  *Columbia River Estuary: ZAPS deployment*
+* **1993** | **RV Atlantis II** (May 27 – June 3)  
+  *Lucky Strike Cruise, Mid-Atlantic Ridge* *Technical: ALVIN submersible survey*
+* **1992** | **RV Atlantis II** (Aug 29 – Oct 20)  
+  *FAZAR Cruise, Northern Mid-Atlantic Ridge* *Technical: Rock-coring and water sampling*
+
+## 1980s
+* **1988** | **RV Endeavor** (Nov 8 – 21)  
+  *SEEP-II-08 Cruise, Cape Hatteras: Mooring and CTD casts*
