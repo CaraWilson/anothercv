@@ -8,19 +8,6 @@ header:
 author_profile: true
 ---
 
-<style>
-  /* Hides the entire header area where the 1900 text lives */
-  .page__inner-content > p:first-of-type {
-    display: none !important;
-  }
-  /* Specifically targets the metadata line if it's in a paragraph */
-  header + p {
-    display: none !important;
-  }
-</style>
-
-<div class="my-real-content">
-
 **CoastWatch Satellite Course**
 
 In 2006 I established the [CoastWatch Satellite Course](https://coastwatch-training.github.io/), which was designed to expose NOAA Fisheries' scientists to satellite data, and to help them integrate satellite data into their work flows. Since 2006 this course has been held regularly, and has also been adapted to target specific topics like sea ice or working with animal telemetry data. The courses were originally taught in-person, during COVID they were converted to an online format, which is largely how they are offered today. All of the materials are available on the [CoastWatch Satellite Course website](https://coastwatch-training.github.io/). Trainings that I have been involved with include: 
