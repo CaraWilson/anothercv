@@ -9,13 +9,17 @@ author_profile: true
 ---
 
 <style>
-  .page__meta, .page__taxonomy, .page__date, .page__header-container { 
-    display: none !important; 
+  /* Hides the entire header area where the 1900 text lives */
+  .page__inner-content > p:first-of-type {
+    display: none !important;
   }
-  header.page__header {
-    display: block !important;
+  /* Specifically targets the metadata line if it's in a paragraph */
+  header + p {
+    display: none !important;
   }
 </style>
+
+<div class="my-real-content">
 
 **CoastWatch Satellite Course**
 
