@@ -12,6 +12,7 @@ author_profile: true
 * B.Sc. in Oceanography, University of Michigan, 1989
 
 ## Work experience
+
 | Period | Role | Organization |
 |:--- |:--- |:--- |
 | **2002 – Pres.** | **Fisheries Research Oceanographer** | NOAA Fisheries, Monterey, CA |
